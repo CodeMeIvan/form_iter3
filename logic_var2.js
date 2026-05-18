@@ -141,9 +141,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (field.id === "password") {
         handlePasswordFocus(field);
-
-        if (field.id === "password") {
-        handlePasswordFocus(field);
         if (window.innerWidth <= 640) {
         setTimeout(() => {
         const y =
@@ -156,7 +153,7 @@ document.addEventListener("DOMContentLoaded", () => {
       behavior: "smooth"
     });
   }, 450);
-        }
+}
       }
     });
 
