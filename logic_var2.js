@@ -141,6 +141,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (field.id === "password") {
         handlePasswordFocus(field);
+
+        if (window.innerWidth <= 640) {
+          setTimeout(() => {
+            field.scrolIntoView({
+              behavior: "smooth",
+              block: "start"
+            });
+          }, 250);
+        }
       }
     });
 
