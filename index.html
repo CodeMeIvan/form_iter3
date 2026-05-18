@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Usability-Test – Registrierungsformular</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="start-page">
+
+  <main class="container start-container">
+
+    <p class="eyebrow">Usability-Test</p>
+
+    <h1>Registrierungsformular eines Online-Shops</h1>
+
+    <p>
+      Vielen Dank für deine Teilnahme. In diesem Test wird die Bedienbarkeit
+      eines webbasierten Registrierungsformulars untersucht.
+    </p>
+
+    <p>
+      Bitte fülle das Formular möglichst natürlich aus, so wie du es auch bei
+      einer realen Registrierung tun würdest.
+    </p>
+
+    <div class="notice">
+      <strong>Hinweis zu Passwörtern:</strong><br>
+      Bitte verwende kein Passwort, das du bereits für reale Online-Dienste nutzt.
+      Passwortinhalte werden nicht gespeichert.
+    </div>
+
+    <div class="privacy">
+      <strong>Datenschutz:</strong><br>
+      Personenbezogene Eingabedaten werden nicht gespeichert oder übertragen.
+      Erfasst werden ausschließlich technische Interaktionsdaten.
+    </div>
+
+    <label for="participantName">Teilnehmernummer</label>
+    <input
+      type="text"
+      id="participantName"
+      placeholder="z. B. P1"
+      required
+    >
+
+    <div class="button-group">
+      <button
+        class="reference-btn"
+        type="button"
+        onclick="startTest('variante1')"
+      >
+        Variante 1 starten
+      </button>
+
+      <button
+        class="model-btn"
+        type="button"
+        onclick="startTest('variante2')"
+      >
+        Variante 2 starten
+      </button>
+    </div>
+
+  </main>
+
+  <script src="tracker.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Variante 2 – Shop-Registrierung</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="var2_style.css" />
+</head>
+<body class="shop-registration variant-2">
+  <div class="app-shell">
+    <div class="shop-bg" aria-hidden="true">
+      <div class="shop-topbar">
+        <div class="brand">Shopora</div>
+        <div class="searchbar">
+          <select>
+            <option>Alle</option>
+            <option>Elektronik</option>
+            <option>Haushalt</option>
+            <option>Mode</option>
+          </select>
+          <input type="text" value="Kopfhörer, Kabel, Bücher..." />
+          <button>Suchen</button>
+        </div>
+        <div class="top-actions">
+          <span>Bestellungen</span>
+          <span>Wunschliste</span>
+          <span>Warenkorb (2)</span>
+        </div>
+      </div>
+
+      <div class="shop-nav">
+        <span>Deals</span>
+        <span>Prime</span>
+        <span>Neuheiten</span>
+        <span>Technik</span>
+        <span>Haushalt</span>
+        <span>Mode</span>
+        <span>Bücher</span>
+        <span>Lebensmittel</span>
+      </div>
+
+      <div class="shop-main">
+        <div class="hero-strip">
+          <div class="hero-banner">
+            <h2>Frühlingsangebote entdecken</h2>
+            <p>Spare bei Bestsellern, Technik und Haushaltsprodukten. Exklusive Aktionen nur für kurze Zeit.</p>
+            <a href="#" class="hero-btn">Angebote ansehen</a>
+          </div>
+          <div class="hero-side">
+            <span class="pill">Heute beliebt</span>
+            <strong>Express-Lieferung bis morgen</strong>
+            <span>Mit Ihrem Konto bestellen Sie künftig noch schneller.</span>
+          </div>
+        </div>
+
+        <div class="shop-grid">
+          <div class="product-card"><div class="product-img"></div><div class="product-title">Kabellose Kopfhörer mit Noise Cancelling</div><div class="product-rating">★★★★☆ 4,4</div><div class="product-price">79,99 €</div><button class="product-btn">In den Warenkorb</button></div>
+          <div class="product-card"><div class="product-img"></div><div class="product-title">Kompakte Kaffeemaschine für kleine Küchen</div><div class="product-rating">★★★★★ 4,8</div><div class="product-price">59,90 €</div><button class="product-btn">In den Warenkorb</button></div>
+          <div class="product-card"><div class="product-img"></div><div class="product-title">Ladekabel USB-C – 3er Set</div><div class="product-rating">★★★★☆ 4,2</div><div class="product-price">12,99 €</div><button class="product-btn">In den Warenkorb</button></div>
+          <div class="product-card"><div class="product-img"></div><div class="product-title">Bestseller-Roman des Monats</div><div class="product-rating">★★★★☆ 4,5</div><div class="product-price">18,00 €</div><button class="product-btn">In den Warenkorb</button></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="overlay">
+      <div class="form-card">
+        <div class="card-header">
+          <div class="eyebrow">Konto erstellen</div>
+          <h1>Registrieren Sie sich für einen schnelleren Einkauf</h1>
+          <p>Sichern Sie Ihre Informationen, um die nächste Bestellung bequemer durchzuführen.</p>
+        </div>
+
+        <div class="sticky-progress">
+          <div class="progress-meta">
+            <span>Fortschritt</span>
+            <span id="progressText">0 % abgeschlossen</span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-bar" id="progressBar"></div>
+          </div>
+        </div>
+
+        <form id="testForm" novalidate>
+          <section class="form-section">
+            <h2>Persönliche Informationen</h2>
+            <small>Wichtig für den Versand und die Zuordnung Ihrer Bestellung.</small>
+
+            <div class="form-row personal-row">
+              <div class="field short-field">
+                <label for="salutation">Anrede</label>
+                <select id="salutation" name="salutation" required>
+                  <option value="">-</option>
+                  <option>Herr</option>
+                  <option>Frau</option>
+                  <option>Divers</option>
+                  <option>Keine Angabe</option>
+                </select>
+                <div class="field-message" id="salutationMessage"></div>
+              </div>
+
+              <div class="field short-field">
+                <label for="title">Titel</label>
+                <select id="title" name="title">
+                  <option value="">-</option>
+                  <option>Dr.</option>
+                  <option>Prof.</option>
+                  <option>Prof. Dr.</option>
+                </select>
+                <div class="field-message" id="titleMessage"></div>
+              </div>
+
+              <div class="field medium-field">
+                <label for="lastName">Name</label>
+                <input type="text" id="lastName" name="lastName" pattern="^[A-Za-zÄÖÜäöüß\s\-]+$" title="Bitte nur Buchstaben eingeben." required />
+                <div class="field-message" id="lastNameMessage"></div>
+              </div>
+
+              <div class="field medium-field">
+                <label for="firstName">Vorname</label>
+                <input type="text" id="firstName" name="firstName" pattern="^[A-Za-zÄÖÜäöüß\s\-]+$" title="Bitte nur Buchstaben eingeben." required />
+                <div class="field-message" id="firstNameMessage"></div>
+              </div>
+            </div>
+
+            <div class="field medium-field">
+              <label for="birthDate">Geburtsdatum</label>
+              <small>Manche Artikel könnten ab 18 Jahren sein.</small>
+              <input type="date" id="birthDate" name="birthDate" required />
+              <div class="support-hint" id="birthDateHint">
+                Nutzen Sie Zahlen oder das Kalender-Symbol rechts im Feld.
+              </div>
+              <div class="field-message" id="birthDateMessage"></div>
+            </div>
+          </section>
+
+          <section class="form-section">
+            <h2>Adresse</h2>
+            <small>Wichtig für den Versand.</small>
+
+            <div class="form-row address-row street-house-row">
+              <div class="field long-field">
+                <label for="street">Straße</label>
+                <input type="text" id="street" name="street" pattern="^[A-Za-zÄÖÜäöüß\s\-]+$" required />
+                <div class="field-message" id="streetMessage"></div>
+              </div>
+              <div class="field short-field">
+                <label for="houseNumber">Hausnummer</label>
+                <input type="text" id="houseNumber" name="houseNumber" pattern="^[0-9A-Za-z\-\/]{1,8}$" maxlength="8" required />
+                <div class="field-message" id="houseNumberMessage"></div>
+              </div>
+            </div>
+
+            <div class="form-row address-row postal-city-row">
+              <div class="field short-field">
+                <label for="postalCode">PLZ</label>
+                <input type="text" id="postalCode" name="postalCode" inputmode="numeric" pattern="^\d{5}$" maxlength="5" required />
+                <div class="field-message" id="postalCodeMessage"></div>
+              </div>
+              <div class="field long-field">
+                <label for="city">Ort</label>
+                <input type="text" id="city" name="city" required />
+                <div class="field-message" id="cityMessage"></div>
+              </div>
+            </div>
+
+            <div class="radio-block">
+              <label>Abweichende Lieferadresse?</label>
+              <div class="radio-group">
+                <label><input type="radio" name="differentDelivery" value="no" checked /> Nein</label>
+                <label><input type="radio" name="differentDelivery" value="yes" /> Ja</label>
+              </div>
+            </div>
+
+            <div class="delivery-section" id="deliverySection">
+              <div class="context-hint">Bitte geben Sie die alternative Lieferadresse an.</div>
+
+              <div class="form-row address-row street-house-row">
+                <div class="field long-field">
+                  <label for="deliveryStreet">Straße</label>
+                  <input type="text" id="deliveryStreet" name="deliveryStreet" pattern="^[A-Za-zÄÖÜäöüß\s\-]+$" />
+                  <div class="field-message" id="deliveryStreetMessage"></div>
+                </div>
+                <div class="field short-field">
+                  <label for="deliveryHouseNumber">Hausnummer</label>
+                  <input type="text" id="deliveryHouseNumber" name="deliveryHouseNumber" pattern="^[0-9A-Za-z\-\/]{1,8}$" maxlength="8" />
+                  <div class="field-message" id="deliveryHouseNumberMessage"></div>
+                </div>
+              </div>
+
+              <div class="form-row address-row postal-city-row">
+                <div class="field short-field">
+                  <label for="deliveryPostalCode">PLZ</label>
+                  <input type="text" id="deliveryPostalCode" name="deliveryPostalCode" inputmode="numeric" pattern="^\d{5}$" maxlength="5" />
+                  <div class="field-message" id="deliveryPostalCodeMessage"></div>
+                </div>
+                <div class="field long-field">
+                  <label for="deliveryCity">Ort</label>
+                  <input type="text" id="deliveryCity" name="deliveryCity" />
+                  <div class="field-message" id="deliveryCityMessage"></div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="form-section">
+            <h2>Login-Informationen</h2>
+            <small>Wichtig, damit Sie sich künftig anmelden und Ihre Bestellungen verwalten können.</small>
+            
+            <div class="field medium-field">
+              <label for="username">Benutzername</label>
+              <input type="text" id="username" name="username" minlength="4" maxlength="20" pattern="^[A-Za-z0-9._-]+$" required />
+              <div class="support-hint" id="usernameHint">
+                Damit repräsentieren Sie sich im Online-Shop. Zusätzlich dient der Benutzername dem Login.
+              </div>
+              <div class="username-status" id="usernameStatus"></div>
+            </div>
+
+            <div class="field medium-field">
+              <label for="password">Passwort</label>
+              <input type="password" id="password" name="password" minlength="8" maxlength="13" required />
+
+              <div class="password-box">
+                <div class="password-strength-row">
+                  <span>Passwortstärke</span>
+                  <strong id="passwordStrengthLabel">Noch keine Eingabe</strong>
+                </div>
+                <div class="password-strength-track">
+                  <div class="password-strength-bar" id="passwordStrengthBar"></div>
+                </div>
+                <ul class="password-rules">
+                  <li id="ruleLength"><span class="rule-icon">✕</span>8 bis 13 Zeichen</li>
+                  <li id="ruleUppercase"><span class="rule-icon">✕</span>Mindestens ein Großbuchstabe</li>
+                  <li id="ruleNumber"><span class="rule-icon">✕</span>Mindestens eine Zahl</li>
+                  <li id="ruleSpecial"><span class="rule-icon">✕</span>Mindestens ein Sonderzeichen</li>
+                  <li id="ruleStrong"><span class="rule-icon">✕</span>Starkes Passwort: mindestens 10 Zeichen</li>
+                </ul>
+              </div>
+              <div class="field-message" id="passwordMessage"></div>
+            </div>
+
+            <div class="field medium-field">
+              <label for="passwordRepeat">Passwort wiederholen</label>
+              <input type="password" id="passwordRepeat" name="passwordRepeat" required />
+              <div class="field-message" id="passwordRepeatMessage"></div>
+            </div>
+          </section>
+
+          <div class="form-actions">
+            <button type="submit" class="btn-primary">Registrierung abschließen</button>
+            <button type="button" class="btn-secondary" id="cancelButton">Abbrechen</button>
+          </div>
+
+          <div class="helper-note">Dies ist ein gemockter Registrierungsvorgang für einen Usability-Test.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="tracker.js"></script>
+  <script src="formlogic.js"></script>
+  <script src="logic_var2.js"></script>
+</body>
+</html>
