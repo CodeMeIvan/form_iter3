@@ -137,20 +137,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   fields.forEach((field) => {
     field.addEventListener("focus", () => {
-      handleFocus(field);
+  handleFocus(field);
 
-      if (window.innerWidth <= 640) {
+  if (field.id === "password") {
+    handlePasswordFocus(field);
+  }
 
-  setTimeout(() => {
-
-    field.scrollIntoView({
-      behavior: "smooth",
-      block: "start"
-    });
-
-  }, 250);
-      }
-    });
+  if (window.innerWidth <= 640 && field.id === "password") {
+    setTimeout(() => {
+      field.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }, 250);
+  }
+});
 
     field.addEventListener("blur", () => {
       handleBlur(field);
