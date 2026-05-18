@@ -139,21 +139,16 @@ document.addEventListener("DOMContentLoaded", () => {
     field.addEventListener("focus", () => {
       handleFocus(field);
 
-      if (field.id === "password") {
-        handlePasswordFocus(field);
-        if (window.innerWidth <= 640) {
-        setTimeout(() => {
-        const y =
-        field.getBoundingClientRect().top +
-        window.pageYOffset -
-        80;
+      if (window.innerWidth <= 640) {
 
-       window.scrollTo({
-      top: y,
-      behavior: "smooth"
+  setTimeout(() => {
+
+    field.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
     });
-  }, 450);
-}
+
+  }, 250);
       }
     });
 
