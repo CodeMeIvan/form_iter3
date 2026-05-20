@@ -728,12 +728,8 @@ button {
     border-radius: 16px;
   }
 
-   h1 {
-      font-size: 24px;
-   }
-
   .card-header h1 {
-    font-size: 24px;
+    font-size: 26px;
   }
 
   .personal-row,
@@ -770,6 +766,16 @@ button {
 
   .container {
     padding: 22px;
+  }
+
+  .password-visibility-hint {
+    display: none;
+  }
+
+  .card-header h1, .hero-banner h2 {
+    font-size: 24px;
+    line-height: 1.2;
+    word-break: break-word;
   }
 }
 
@@ -911,10 +917,4 @@ small {
 
 .password-toggle:hover + .password-visibility-hint {
   opacity: 1;
-}
-
-@media (max-width: 640px) {
-  .password-visibility-hint {
-    display: none;
-  }
 }
