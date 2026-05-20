@@ -348,3 +348,9 @@ body.variant-2 .password-rules li.rule-activated {
     max-width: 100%;
   }
 }
+
+@media (max-width: 640px) {
+  .form-card {
+    overflow: hidden;
+  }
+}
