@@ -728,6 +728,10 @@ button {
     border-radius: 16px;
   }
 
+   h1 {
+      font-size: 26px;
+   }
+
   .card-header h1 {
     font-size: 26px;
   }
