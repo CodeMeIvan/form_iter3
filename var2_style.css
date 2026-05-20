@@ -346,6 +346,7 @@ body.variant-2 .password-rules li.rule-activated {
     width: 100%;
     max-width: 100%;
     min-width: 0;
+    height: 44px;
   }
 
   .field,
