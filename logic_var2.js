@@ -14,6 +14,8 @@ document.addEventListener("DOMContentLoaded", () => {
     return field.closest(".field");
   }
 
+  
+
   function getSectionHint(field) {
     const section = field.closest(".form-section");
     const supportHint = getSupportHint(field);
@@ -32,20 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
   return wrapper.querySelector(".support-hint");
 }
 
-  function pulseProgressbar() {
-    if (!progressBar) return;
-
-    progressBar.classList.remove("progress-focus-linked");
-
-    void progressBar.offsetWidth;
-
-    progressBar.classList.add("progress-focus-linked");
-
-    setTimeout(() => {
-      progressBar.classList.remove("progress-focus-linked");
-    }, 500);
-  }
-
   function markProgressComplete() {
     if (!progressBar) return;
 
@@ -57,6 +45,18 @@ document.addEventListener("DOMContentLoaded", () => {
       progressBar.classList.remove("progress-complete");
     }
   }
+
+  function pulseProgressBar() {
+  if (!progressBar) return;
+
+  progressBar.classList.remove("progress-pulse");
+  void progressBar.offsetWidth;
+  progressBar.classList.add("progress-pulse");
+
+  setTimeout(() => {
+    progressBar.classList.remove("progress-pulse");
+  }, 600);
+}
 
   function handleFocus(field) {
     const wrapper = getFieldWrapper(field);
@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const currentWidth = progressBar.style.width;
 
       if (currentWidth !== lastProgressWidth) {
-        pulseProgressbar();
+        pulseProgressBar();
         lastProgressWidth = currentWidth;
       }
 

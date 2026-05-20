@@ -217,33 +217,81 @@
             </div>
 
             <div class="field medium-field">
-              <label for="password">Passwort</label>
-              <input type="password" id="password" name="password" minlength="8" maxlength="13" required />
+  <label for="password">Passwort</label>
 
-              <div class="password-box">
-                <div class="password-strength-row">
-                  <span>Passwortstärke</span>
-                  <strong id="passwordStrengthLabel">Noch keine Eingabe</strong>
-                </div>
-                <div class="password-strength-track">
-                  <div class="password-strength-bar" id="passwordStrengthBar"></div>
-                </div>
-                <ul class="password-rules">
-                  <li id="ruleLength"><span class="rule-icon">✕</span>8 bis 13 Zeichen</li>
-                  <li id="ruleUppercase"><span class="rule-icon">✕</span>Mindestens ein Großbuchstabe</li>
-                  <li id="ruleNumber"><span class="rule-icon">✕</span>Mindestens eine Zahl</li>
-                  <li id="ruleSpecial"><span class="rule-icon">✕</span>Mindestens ein Sonderzeichen</li>
-                  <li id="ruleStrong"><span class="rule-icon">✕</span>Starkes Passwort: mindestens 10 Zeichen</li>
-                </ul>
-              </div>
-              <div class="field-message" id="passwordMessage"></div>
-            </div>
+  <div class="password-input-wrap">
+    <input
+      type="password"
+      id="password"
+      name="password"
+      minlength="8"
+      maxlength="13"
+      required
+    />
 
-            <div class="field medium-field">
-              <label for="passwordRepeat">Passwort wiederholen</label>
-              <input type="password" id="passwordRepeat" name="passwordRepeat" required />
-              <div class="field-message" id="passwordRepeatMessage"></div>
-            </div>
+    <button
+      type="button"
+      class="password-toggle"
+      data-target="password"
+      aria-label="Passwort anzeigen"
+    >
+      👁
+    </button>
+
+    <small class="password-visibility-hint">
+      Nur klicken, wenn niemand mitliest!
+    </small>
+  </div>
+
+  <div class="password-box">
+    <div class="password-strength-row">
+      <span>Passwortstärke</span>
+      <strong id="passwordStrengthLabel">Noch keine Eingabe</strong>
+    </div>
+
+    <div class="password-strength-track">
+      <div class="password-strength-bar" id="passwordStrengthBar"></div>
+    </div>
+
+    <ul class="password-rules">
+      <li id="ruleLength"><span class="rule-icon">✕</span>8 bis 13 Zeichen</li>
+      <li id="ruleUppercase"><span class="rule-icon">✕</span>Mindestens ein Großbuchstabe</li>
+      <li id="ruleNumber"><span class="rule-icon">✕</span>Mindestens eine Zahl</li>
+      <li id="ruleSpecial"><span class="rule-icon">✕</span>Mindestens ein Sonderzeichen</li>
+      <li id="ruleStrong"><span class="rule-icon">✕</span>Starkes Passwort: mindestens 10 Zeichen</li>
+    </ul>
+  </div>
+
+  <div class="field-message" id="passwordMessage"></div>
+</div>
+
+<div class="field medium-field">
+  <label for="passwordRepeat">Passwort wiederholen</label>
+
+  <div class="password-input-wrap">
+    <input
+      type="password"
+      id="passwordRepeat"
+      name="passwordRepeat"
+      required
+    />
+
+    <button
+      type="button"
+      class="password-toggle"
+      data-target="passwordRepeat"
+      aria-label="Passwortwiederholung anzeigen"
+    >
+      👁
+    </button>
+
+    <small class="password-visibility-hint">
+      Nur klicken, wenn niemand mitliest!
+    </small>
+  </div>
+
+  <div class="field-message" id="passwordRepeatMessage"></div>
+</div>
           </section>
 
           <div class="form-actions">
@@ -251,7 +299,7 @@
             <button type="button" class="btn-secondary" id="cancelButton">Abbrechen</button>
           </div>
 
-          <div class="helper-note">Dies ist ein gemockter Registrierungsvorgang für einen Usability-Test.</div>
+          
         </form>
       </div>
     </div>

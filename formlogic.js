@@ -608,3 +608,22 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 });
+
+//Passwort anzeigen
+document.querySelectorAll(".password-toggle").forEach((button) => {
+  button.addEventListener("click", () => {
+    const targetId = button.dataset.target;
+    const input = document.getElementById(targetId);
+
+    if (!input) return;
+
+    const isHidden = input.type === "password";
+
+    input.type = isHidden ? "text" : "password";
+    button.textContent = isHidden ? "🙈" : "👁";
+    button.setAttribute(
+      "aria-label",
+      isHidden ? "Passwort ausblenden" : "Passwort anzeigen"
+    );
+  });
+});
