@@ -232,17 +232,6 @@ body.variant-2 .password-box.password-active .password-strength-track {
   margin: 0 0 14px 0;
 }
 
-.support-hint {
-  color: #92400e;
-  background: #fef3c7;
-  border-left: 4px solid #f59e0b;
-  border-radius: 10px;
-  padding: 10px 12px;
-  font-size: 14px;
-  line-height: 1.45;
-  margin: 6px 0 10px;
-}
-
 body.variant-2 .support-hint {
   opacity: 0;
   max-height: 0;
@@ -252,6 +241,7 @@ body.variant-2 .support-hint {
 body.variant-2 .support-hint.hint-active {
   opacity: 1;
   max-height: 120px;
+  transform: translateY(2px)
 }
 
 body.variant-2 .support-hint {
