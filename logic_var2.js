@@ -14,7 +14,21 @@ document.addEventListener("DOMContentLoaded", () => {
     return field.closest(".field");
   }
 
-  
+  function getPasswordBox(field) {
+  const layout = field.closest(".password-layout");
+
+  if (layout) {
+    return layout.querySelector(".password-box");
+  }
+
+  const wrapper = field.closest(".field");
+
+  if (wrapper) {
+    return wrapper.querySelector(".password-box");
+  }
+
+  return null;
+}
 
   function getSectionHint(field) {
     const section = field.closest(".form-section");
@@ -27,11 +41,19 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function getSupportHint(field) {
+  const supportRow = field.closest(".field-support-row");
+
+  if (supportRow) {
+    return supportRow.querySelector(".support-hint");
+  }
+
   const wrapper = field.closest(".field");
 
-  if (!wrapper) return null;
+  if (wrapper) {
+    return wrapper.querySelector(".support-hint");
+  }
 
-  return wrapper.querySelector(".support-hint");
+  return null;
 }
 
   function markProgressComplete() {
@@ -116,24 +138,20 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function handlePasswordFocus(field) {
-    const passwordBox = field
-      .closest(".field")
-      ?.querySelector(".password-box");
+  const passwordBox = getPasswordBox(field);
 
-    if (passwordBox) {
-      passwordBox.classList.add("password-active");
-    }
+  if (passwordBox) {
+    passwordBox.classList.add("password-active");
   }
+}
 
-  function handlePasswordBlur(field) {
-    const passwordBox = field
-      .closest(".field")
-      ?.querySelector(".password-box");
+function handlePasswordBlur(field) {
+  const passwordBox = getPasswordBox(field);
 
-    if (passwordBox) {
-      passwordBox.classList.remove("password-active");
-    }
+  if (passwordBox) {
+    passwordBox.classList.remove("password-active");
   }
+}
 
   fields.forEach((field) => {
     field.addEventListener("focus", () => {

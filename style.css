@@ -787,14 +787,18 @@ button {
 }
 
 .support-hint {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
   color: #92400e;
   background: #fef3c7;
-  border-left: 4px solid #f59e0b;
+  border-left: 3px solid #f59e0b;
   border-radius: 10px;
-  padding: 10px 12px;
-  font-size: 14px;
-  line-height: 1.45;
-  margin: 6px 0 10px;
+  padding: 8px 10px;
+  font-size: 12px;
+  line-height: 1.35;
+  margin: 0;
+  overflow-wrap: break-word;
 }
 
 body.variant-1 .support-hint {
@@ -901,4 +905,86 @@ small {
 
 .password-toggle:hover + .password-visibility-hint {
   opacity: 1;
+}
+
+/* ==========================
+   Unterstützte Felder
+========================== */
+
+.field-support-row {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) minmax(220px, 1fr);
+  gap: 18px;
+  align-items: start;
+
+  margin-bottom: 16px;
+}
+
+.field-support-row .support-hint {
+  margin-top: 22px;
+}
+
+/* ==========================
+   Passwortbereich
+========================== */
+
+.password-layout {
+  display: grid;
+
+  grid-template-columns:
+    minmax(240px, 1fr)
+    minmax(280px, 1fr);
+
+  gap: 22px;
+
+  align-items: start;
+}
+
+.password-fields {
+  display: grid;
+  gap: 14px;
+}
+
+.password-layout .password-box {
+  margin-top: 22px;
+
+  max-width: none;
+}
+
+@media (max-width: 640px) {
+
+  .field-support-row,
+  .password-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .field-support-row .support-hint,
+  .password-layout .password-box {
+    margin-top: 0;
+  }
+
+  .street-house-row, .postal-city-row {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+.address-row {
+  width: 100%;
+  max-width: 520px;
+  column-gap: 14px;
+  row-gap: 4px;
+}
+
+.street-house-row {
+  grid-template-columns: minmax(0, 3fr) minmax(96px, 1fr);
+}
+
+.postal-city-row {
+  grid-template-columns: minmax(96px, 1fr) minmax(0, 3fr);
+}
+
+.address-row .field input {
+  width: 100%;
+  max-width: 100%;
 }
