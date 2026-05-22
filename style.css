@@ -797,28 +797,12 @@ button {
   margin: 6px 0 10px;
 }
 
-.help-toggle {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 20px;
-  height: 20px;
-  margin-left: 6px;
-  border: 1px solid #d1d5db;
-  border-radius: 50%;
-  background: #ffffff;
-  color: #6b7280;
-  font-size: 12px;
-  cursor: pointer;
-}
-
 body.variant-1 .support-hint {
-  display: none;
+   display: block;
+   opacity: 1;
+   max-height: none;
 }
 
-body.variant-1 .support-hint.visible {
-  display: block;
-}
 
 small {
   color: var(--muted);
